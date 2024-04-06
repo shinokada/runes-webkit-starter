@@ -1,6 +1,6 @@
 <script lang="ts">
   import { HighlightCompo, CodeWrapper, Code, H2, H3 } from 'svelte-icon-webkit';
-  
+
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
     import: 'default',
@@ -16,17 +16,26 @@
 
 <H2>Size</H2>
 
-<p>To change the size of an icon, use the <Code>size</Code> prop and specify the desired size. For example:</p>
+<p>
+  To change the size of an icon, use the <Code>size</Code> prop and specify the desired size. For example:
+</p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/size.md'] as string} />
 
-<p>If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by including the desired classes in the `class` prop. For example:</p>
+<p>
+  If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by
+  including the desired classes in the `class` prop. For example:
+</p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/size-2.md'] as string} />
 
 <H2>CSS frameworks suport</H2>
 
-<p>You can apply CSS framework directly to the icon component or its parent tag using the <Code>class</Code> prop.</p>
+<p>
+  You can apply CSS framework directly to the icon component or its parent tag using the <Code
+    >class</Code
+  > prop.
+</p>
 
 <H3>Tailwind CSS example:</H3>
 
@@ -38,7 +47,8 @@
 
 <H2>Events and attributes</H2>
 
-<p>Since all icons have <Code>...restProps</Code>, you can add any events and attibutes to icons.</p>
-
+<p>
+  Since all icons have <Code>...restProps</Code>, you can add any events and attibutes to icons.
+</p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/passing-down-attributes.md'] as string} />

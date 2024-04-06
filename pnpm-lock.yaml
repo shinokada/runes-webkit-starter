@@ -72,8 +72,8 @@ devDependencies:
     specifier: ^3.6.9
     version: 3.6.9(postcss-load-config@5.0.3)(postcss@8.4.38)(svelte@5.0.0-next.94)
   svelte-icon-webkit:
-    specifier: ^0.3.7
-    version: 0.3.7(svelte@5.0.0-next.94)
+    specifier: ^0.4.0
+    version: 0.4.0(svelte@5.0.0-next.94)
   svelte-lib-helpers:
     specifier: ^0.4.5
     version: 0.4.5
@@ -2827,8 +2827,8 @@ packages:
       svelte: 5.0.0-next.94
     dev: true
 
-  /svelte-icon-webkit@0.3.7(svelte@5.0.0-next.94):
-    resolution: {integrity: sha512-VBBjKWrkpT2yMFeOh/dlJcpdJevsvUJCHwdFcPzXLNAZU+uvhFaKhiuvZLpqfRmfacnDl20arWeHkQjJKVeWiQ==}
+  /svelte-icon-webkit@0.4.0(svelte@5.0.0-next.94):
+    resolution: {integrity: sha512-02lGgaa+4SPUWfwpZN/vj6GPNaKIFxbyT8RIMnIA/i3Wyc2nSlGSkNJ2HKZR7QC6QcrfAZkTeiGCrNqmsvUgtA==}
     engines: {node: '>=18.0.0', npm: '>=7.0.0'}
     peerDependencies:
       svelte: ^5.0.0-next.65

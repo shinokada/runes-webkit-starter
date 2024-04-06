@@ -8,7 +8,6 @@ import svelteIconWebkit from 'svelte-icon-webkit/package.json' assert { type: 'j
 import svelteRuneHighlight from 'svelte-rune-highlight/package.json' assert { type: 'json' };
 import vitePackage from 'vite/package.json' assert { type: 'json' };
 
-
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
@@ -23,6 +22,6 @@ export default defineConfig({
     __SVELTE_VERSION__: `"${sveltePackage.version}"`,
     __SVELTEKIT_VERSION__: `"${svelteKitPackage.version}"`,
     __SVELTE_RUNE_HIGHLIGHT_VERSION__: `"${svelteRuneHighlight.version}"`,
-    __VITE_VERSION__: `"${vitePackage.version}"`,
+    __VITE_VERSION__: `"${vitePackage.version}"`
   }
 });
