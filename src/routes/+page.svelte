@@ -10,8 +10,7 @@
     cards,
     info,
     pkg
-  } from 'svelte-icon-webkit';
-  import Meta from './utils/Meta.svelte';
+  } from 'runes-webkit';
 
   const cardsToExclude = ['Seven Props'];
   const brand = {
@@ -21,11 +20,7 @@
     iconClass: 'text-green-500'
   };
   let filteredCards = $state(insertObjectToArray(excludeByTitle(cards, cardsToExclude), brand, 2));
-  // metatag
-  const title = removeHyphensAndCapitalize(__NAME__);
 </script>
-
-<Meta {title} />
 
 <SupportBanner>
   To Keep It Going, Please Show Your Love.<a href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
