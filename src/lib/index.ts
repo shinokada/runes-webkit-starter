@@ -1,6 +1,18 @@
-export { default as A1Password } from './A1Password.svelte';
-export { default as Acast } from './Acast.svelte';
-export { default as Access } from './Access.svelte';
-export { default as Activitypub } from './Activitypub.svelte';
-export { default as Adobe } from './Adobe.svelte';
-export { default as Airbnb } from './Airbnb.svelte';
+export { default as RunesMeta } from './RunesMeta.svelte';
+
+export type { MetaProps, TwitterType, OgType } from './RunesMeta.svelte';
+
+type AnyObject = { [key: string]: any };
+export function deepMerge(target: AnyObject, source: AnyObject): AnyObject {
+  const merged: AnyObject = Object.assign({}, target);
+  for (const key of Object.keys(source)) {
+    const targetValue: any = target[key];
+    const sourceValue: any = source[key];
+    if (typeof targetValue === 'object' && sourceValue !== null) {
+      merged[key] = deepMerge(targetValue, sourceValue);
+    } else if (sourceValue !== undefined) {
+      merged[key] = sourceValue;
+    }
+  }
+  return merged;
+}

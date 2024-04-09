@@ -1,6 +1,7 @@
 <script>
   import '../app.pcss';
   import { Runatics } from 'runatics';
+  import { RunesMeta } from '$lib';
   import { page } from '$app/stores';
   import {
     Footer,
@@ -10,9 +11,15 @@
     removeHyphensAndCapitalize
   } from 'runes-webkit';
   import Nav from './utils/Nav.svelte';
+  import extend from 'just-extend';
+  import Mycompo from '$lib/Mycompo.svelte';
   let { children, data } = $props();
   const analyticsId = data.ANALYTICS_ID
+  const layoutMetaTags = data.layoutMetaTags
+  // console.log('data', data)
+  // console.log('analyticsId', analyticsId)
   let currentUrl = $state($page.url.pathname);
+  let metaTags = $state(extend(true, {}, layoutMetaTags, $page.data.pageMetaTags));
   $effect(() => {
     currentUrl = $page.url.pathname;
   });
@@ -31,8 +38,9 @@
   const githubUrl = `https://github.com/shinokada/${__NAME__}`;
 
 </script>
-<Runatics {analyticsId} />
 
+<Runatics {analyticsId} />
+<RunesMeta />
 <Nav
   {lis}
   {siteName}
