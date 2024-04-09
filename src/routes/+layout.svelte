@@ -1,16 +1,17 @@
 <script>
   import '../app.pcss';
+  import { Runatics } from 'runatics';
   import { page } from '$app/stores';
   import {
     Footer,
-    MetaTag,
     OnThisPage,
     extract,
     Sidebar,
     removeHyphensAndCapitalize
   } from 'runes-webkit';
   import Nav from './utils/Nav.svelte';
-  let { children } = $props();
+  let { children, data } = $props();
+  const analyticsId = data.ANALYTICS_ID
   let currentUrl = $state($page.url.pathname);
   $effect(() => {
     currentUrl = $page.url.pathname;
@@ -28,14 +29,10 @@
   const siteName = removeHyphensAndCapitalize(__NAME__);
   const twitterUrl = 'https://twitter.com/shinokada';
   const githubUrl = `https://github.com/shinokada/${__NAME__}`;
-  const meta = {
-    description:
-      'A collection of reusable Svelte components for building icon-based user interfaces in web applications.',
-    keywords: 'Svelte 5, Runes, SvelteKit, UI, icons'
-  };
-</script>
 
-<MetaTag {...meta} />
+</script>
+<Runatics {analyticsId} />
+
 <Nav
   {lis}
   {siteName}
