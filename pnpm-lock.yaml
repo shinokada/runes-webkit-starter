@@ -47,9 +47,6 @@ devDependencies:
   highlight.js:
     specifier: ^11.9.0
     version: 11.9.0
-  just-extend:
-    specifier: ^6.2.0
-    version: 6.2.0
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -72,8 +69,8 @@ devDependencies:
     specifier: ^0.1.2
     version: 0.1.2(svelte@5.0.0-next.100)
   runes-meta-tags:
-    specifier: ^0.2.2
-    version: 0.2.2(svelte@5.0.0-next.100)
+    specifier: ^0.2.3
+    version: 0.2.3(svelte@5.0.0-next.100)
   runes-webkit:
     specifier: ^0.4.16
     version: 0.4.16(@sveltejs/kit@2.5.5)(svelte@5.0.0-next.100)
@@ -90,8 +87,8 @@ devDependencies:
     specifier: ^0.4.5
     version: 0.4.5
   svelte-rune-highlight:
-    specifier: ^0.5.7
-    version: 0.5.7(svelte@5.0.0-next.100)
+    specifier: ^0.5.8
+    version: 0.5.8(svelte@5.0.0-next.100)
   tailwind-merge:
     specifier: ^2.2.2
     version: 2.2.2
@@ -2779,10 +2776,6 @@ packages:
       graceful-fs: 4.2.11
     dev: true
 
-  /just-extend@6.2.0:
-    resolution: {integrity: sha512-cYofQu2Xpom82S6qD778jBDpwvvy39s1l/hrYij2u9AMdQcGRpaBu6kY4mVhuno5kJVi1DAz4aiphA2WI1/OAw==}
-    dev: true
-
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
     dependencies:
@@ -3762,8 +3755,8 @@ packages:
       svelte: 5.0.0-next.100
     dev: true
 
-  /runes-meta-tags@0.2.2(svelte@5.0.0-next.100):
-    resolution: {integrity: sha512-cz7MoEDq5juL4WWrfc5/6qVD0B47GkLilIEND8DT6hR0kmhGZI8WZFVKtMPE6/nrAlU3yfc9bBUYa5424937yg==}
+  /runes-meta-tags@0.2.3(svelte@5.0.0-next.100):
+    resolution: {integrity: sha512-HQjytZTvyEjY6ZeFPbs+jZegEG2+wNxtO1CxoF8DBWC2QlHhQQvB8z+9FN4A4Cr4f//tG0t0M85yJTAZyXZArA==}
     peerDependencies:
       svelte: ^5.0.0
     dependencies:
@@ -4244,8 +4237,8 @@ packages:
       typescript: 5.4.5
     dev: true
 
-  /svelte-rune-highlight@0.5.7(svelte@5.0.0-next.100):
-    resolution: {integrity: sha512-hjazjglDSEHMEHTurfBYKczGkPoTu4sQenJ3ht5VIdEJkiQCoNmTKO5BTtWAvogUGHcjfmKhsDDYW+UbGBwYfA==}
+  /svelte-rune-highlight@0.5.8(svelte@5.0.0-next.100):
+    resolution: {integrity: sha512-ZDEn0hIp3NSiymJQ5C75XuDMEbihUUmHve31MMTx/HJA8W2A4H+Y3u12uok9+NFi1kHB9mLYr5J+SqJGGsDXFA==}
     engines: {node: '>=18.0.0', npm: '>=7.0.0'}
     peerDependencies:
       svelte: ^5.0.0-next.65
