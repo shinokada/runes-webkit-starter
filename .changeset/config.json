@@ -1,8 +1,8 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
   "changelog": [
-    "@changesets/cli/changelog",
-    { "repo": "shinokada/runes-webkit-starter" }
+    "@svitejs/changesets-changelog-github-compact",
+    { "repo": "shinokada/runes-webkit" }
   ],
   "commit": false,
   "fixed": [],

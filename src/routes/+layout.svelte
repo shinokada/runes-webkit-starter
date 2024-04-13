@@ -1,5 +1,5 @@
 <script>
-  import '../app.postcss';
+  import '../app.pcss';
   import { page } from '$app/stores';
   import { Footer, OnThisPage, extract, Sidebar, removeHyphensAndCapitalize } from 'runes-webkit'
   import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
