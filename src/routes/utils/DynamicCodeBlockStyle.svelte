@@ -43,3 +43,10 @@
     <option value={theme.value}>{theme.value}</option>
   {/each}
 </select>
+
+<!--
+@component
+[Go to docs](https://runes-webkit.codewithshin.com/)
+## Props
+@props: 
+-->

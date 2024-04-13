@@ -1,10 +1,10 @@
 <script>
   import { setContext } from 'svelte';
-  import { Svelte } from 'svelte-supertiny';
+  import { MapLocationOutline } from 'flowbite-svelte-icons';
   const iconCtx = {
-    size: '30'
+    size: 'xl'
   };
   setContext('iconCtx', iconCtx);
 </script>
 
-<Svelte transform="rotate(90)" />
+<MapLocationOutline color="#ff4488" />

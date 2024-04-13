@@ -1,62 +1,62 @@
 <script>
-  import '../app.pcss';
-  import { Runatics } from 'runatics';
-  import { RunesMeta } from '$lib';
+  import '../app.postcss';
   import { page } from '$app/stores';
-  import {
-    Footer,
-    OnThisPage,
-    extract,
-    Sidebar,
-    removeHyphensAndCapitalize
-  } from 'runes-webkit';
+  import { Footer, OnThisPage, extract, Sidebar, removeHyphensAndCapitalize } from 'runes-webkit'
+  import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
   import Nav from './utils/Nav.svelte';
-  import extend from 'just-extend';
-  import Mycompo from '$lib/Mycompo.svelte';
-  let { children, data } = $props();
+  import { Runatics } from 'runatics';
+
+  let { children, data } = $props()
   const analyticsId = data.ANALYTICS_ID
-  const layoutMetaTags = data.layoutMetaTags
-  // console.log('data', data)
-  // console.log('analyticsId', analyticsId)
+  let metaTags = $state(
+    $page.data.pageMetaTags
+      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+      : data.layoutMetaTags
+  );
+
   let currentUrl = $state($page.url.pathname);
-  let metaTags = $state(extend(true, {}, layoutMetaTags, $page.data.pageMetaTags));
   $effect(() => {
     currentUrl = $page.url.pathname;
-  });
-  const lis = [
-    { name: 'Guide', href: '/guide/svelte-4/getting-started' },
-    { name: 'Icons', href: '/icons' },
-    { name: 'Icon sets', href: 'https://svelte-svg-icons.codewithshin.com/' }
-  ];
+    metaTags = $page.data.pageMetaTags
+      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+      : data.layoutMetaTags;
+  })
+  const lis =[
+    {name: 'Guide', href: '/guide/svelte-4/getting-started'},
+    {name: '3-Tabs', href: '/three-tabs'},
+    {name: '3-Tabs-tailwind', href: '/three-tabs-sizebytailwind'},
+    {name: 'No-tabs', href: '/no-tabs'},
+    {name: 'How to use', href: '/how-to-use'},
+  ]
   const brand = {
     name: 'codewithshin.com',
-    href: 'https://codewithshin.com'
-  };
-  const urlsToIncludeSwitcherAndSidebar = ['/guide/', '/guide2/', '/how-to-use'];
-  const siteName = removeHyphensAndCapitalize(__NAME__);
-  const twitterUrl = 'https://twitter.com/shinokada';
-  const githubUrl = `https://github.com/shinokada/${__NAME__}`;
-
+    href: 'https://codewithshin.com',
+  }
+  const urlsToIncludeSwitcherAndSidebar =['/guide/', '/guide2/', '/how-to-use']
+  const siteName = removeHyphensAndCapitalize(__NAME__)
+  const twitterUrl = 'https://twitter.com/shinokada'
+  const githubUrl = `https://github.com/shinokada/${__NAME__}`
+  const meta = {
+    description: 'A collection of reusable Svelte components for building icon-based user interfaces in web applications.',
+    keywords:'Svelte 5, Runes, SvelteKit, UI, icons',
+  }
 </script>
-
+<RunesMetaTags {...metaTags} />
 <Runatics {analyticsId} />
-<RunesMeta />
-<Nav
-  {lis}
-  {siteName}
-  {twitterUrl}
-  {githubUrl}
-  urlsToIncludeSwitcher={urlsToIncludeSwitcherAndSidebar}
-/>
+
+<Nav {lis} {siteName} {twitterUrl} {githubUrl} urlsToIncludeSwitcher={urlsToIncludeSwitcherAndSidebar}/>
 <div class="lg:flex">
-  {#if urlsToIncludeSwitcherAndSidebar.some((path) => currentUrl.startsWith(path))}
-    <Sidebar />
+  
+  {#if urlsToIncludeSwitcherAndSidebar.some(path => currentUrl.startsWith(path))}
+    <Sidebar asideclass='hidden'/>
     <div class="relative">
       <OnThisPage {extract} headingSelector="#mainContent > :where(h2, h3)" />
     </div>
   {/if}
-  <div class="relative h-full w-full overflow-y-auto px-8">
-    {@render children()}
-    <Footer {brand} {lis} ulClass="dark_bg_theme" />
-  </div>
+    <div class="relative h-full w-full overflow-y-auto px-8">
+      {@render children()}
+      <Footer {brand} {lis} ulClass='dark_bg_theme'/>
+    </div>
+  
 </div>
+

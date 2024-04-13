@@ -1,6 +1,6 @@
 <script>
   import MyIcon from '$lib/MyIcon.svelte';
-  import { Svelte } from 'svelte-supertiny';
+  import { AngleLeftSolid } from 'flowbite-svelte-icons';
 </script>
 
-<MyIcon icon="{Svelte}" />
+<MyIcon icon="{AngleLeftSolid}" />
