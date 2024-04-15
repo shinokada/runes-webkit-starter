@@ -3,7 +3,7 @@
   import type { ComponentType } from 'svelte';
 	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Dropdown, DropdownItem, Drawer } from 'svelte-5-ui-lib';
 	import { page } from '$app/stores';
-  import { GithubSolid, random_tailwind_color, DotsHorizontalOutline, XSolid, Sidebar } from 'runes-webkit'
+  import { GithubSolid, random_tailwind_color, DotsHorizontalOutline, XSolid, Sidebar, sidebarList } from 'runes-webkit'
   import DynamicCodeBlockStyle from './DynamicCodeBlockStyle.svelte';
   import { sineIn } from 'svelte/easing';
 
@@ -150,7 +150,7 @@
       id="drawer-label"
       class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400"
     >
-      Runes Webkit
+      Runes Webkit Starter
     </h5>
     <button
       type="button"
@@ -177,12 +177,13 @@
     </button>
   </div>
   <Sidebar
-    {activeclass}
-    asideclass="w-48 p-0 border-none mt-20 ml-4"
-    divclass="bg-transparent p-0"
+  {sidebarList}
+    aside_class="w-48 p-0 border-none mt-20 ml-4 !important"
+    div_class="bg-transparent p-0"
     sidebarClose={closeNavDrawer}
   />
 </Drawer>
+
 <!--
 @component
 [Go to docs](https://runes-webkit.codewithshin.com/)

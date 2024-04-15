@@ -1,12 +1,12 @@
 <script lang="ts">
   import { removeHyphensAndCapitalize, HomeCards, SupportBanner, TechInfo, BellActiveAltOutline, insertObjectToArray, excludeByTitle, cards, info, pkg } from 'runes-webkit';
-  import { A, Li } from 'svelte-5-ui-lib';
+  import { A } from 'svelte-5-ui-lib';
   const cardsToExclude = ['Seven Props']
   const brand = {
     title: 'Brands, Regular, and Solid Icons',
     description: '2000+ SVG Icons.',
     icon: BellActiveAltOutline,
-    iconClass: 'text-green-500'
+    icon_class: 'text-green-500'
   }
   let filteredCards = $state(insertObjectToArray(excludeByTitle(cards, cardsToExclude), brand, 2))
 

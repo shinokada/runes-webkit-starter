@@ -1,7 +1,7 @@
 <script>
   import '../app.pcss';
   import { page } from '$app/stores';
-  import { Footer, OnThisPage, extract, Sidebar, removeHyphensAndCapitalize } from 'runes-webkit'
+  import { Footer, OnThisPage, extract, Sidebar, removeHyphensAndCapitalize, sidebarList } from 'runes-webkit'
   import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
   import Nav from './utils/Nav.svelte';
   import { Runatics } from 'runatics';
@@ -47,15 +47,18 @@
 <Nav {lis} {siteName} {twitterUrl} {githubUrl} urlsToIncludeSwitcher={urlsToIncludeSwitcherAndSidebar}/>
 <div class="lg:flex">
   
+  
   {#if urlsToIncludeSwitcherAndSidebar.some(path => currentUrl.startsWith(path))}
-    <Sidebar asideclass='hidden'/>
+    <Sidebar 
+    {sidebarList}
+    aside_class='hidden lg:block border-e border-gray-200 dark:border-gray-600'/>
     <div class="relative">
       <OnThisPage {extract} headingSelector="#mainContent > :where(h2, h3)" />
     </div>
   {/if}
     <div class="relative h-full w-full overflow-y-auto px-8">
       {@render children()}
-      <Footer {brand} {lis} ulClass='dark_bg_theme'/>
+      <Footer {brand} {lis}/>
     </div>
   
 </div>
