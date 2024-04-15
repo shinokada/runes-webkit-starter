@@ -61,7 +61,7 @@ test('index page has expected meta twitter', async ({ page }) => {
 
 test('svelte-4/getting-started page has expected h1', async ({ page }) => {
   await page.goto('/guide/svelte-4/getting-started');
-  await expect(page.locator('h1')).toHaveText('Runes Webkit: v1');
+  await expect(page.locator('h1')).toHaveText('Runes Webkit Starter: v1');
 });
 
 test('three-tabs page has expected h1', async ({ page }) => {
