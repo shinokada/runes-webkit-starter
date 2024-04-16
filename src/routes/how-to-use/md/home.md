@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { removeHyphensAndCapitalize, HomeCards, SupportBanner, TechInfo, BellActiveAltOutline, insertObjectToArray, excludeByTitle, cards, info, pkg } from '$lib';
+  import { removeHyphensAndCapitalize, HomeCards, SupportBanner, TechInfo, BellActiveAltOutline, insertObjectToArray, excludeByTitle, cards, info, pkg } from 'runes-webkit';
   import { A } from 'svelte-5-ui-lib';
   const cardsToExclude = ['Seven Props']
   const brand = {
