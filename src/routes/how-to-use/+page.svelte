@@ -64,6 +64,8 @@
   </TabItem>
   <TabItem title="Tests">
     <List>
+      <Li>guide.home.test.ts</Li>
+      <Li>home.test.ts</Li>
       <Li>test.ts</Li>
     </List>
   </TabItem>
@@ -106,47 +108,60 @@
 
 <H2>Setting</H2>
 
-<H3>svelte.config.js</H3>
+<Tabs>
+  <TabItem open title="svelte.config.js">
+    <p>Enable <Code>compilerOptions</Code></p>:
+    <HighlightCompo codeLang="ts" code={modules['./md/svelte-config-js.md'] as string} />
+  </TabItem>
+  <TabItem title="package.json">
+    <p>Update <Code>package.json</Code> by updating <Code>name, version</Code> and add the following and update <Code>keywords</Code>, <Code>contributors</Code>  that is the original author, and all URLs:</p>
+    <HighlightCompo codeLang="ts" code={modules['./md/package-json.md'] as string} />
+  </TabItem>
+  <TabItem title="vite.config.ts">
+    <HighlightCompo codeLang="ts" code={modules['./md/vite-config.md'] as string} />
+  </TabItem>
+  <TabItem title="runeswebkit.css">
+    <p>Import <Code>runeswebkit.css</Code> in the <Code>app.postcss</Code> or <Code>app.pcss</Code> file. To overwrite the default style, add your style in the <Code>app.postcss</Code> or <Code>app.pcss</Code> file.</p>
+    <HighlightCompo codeLang="ts" code={modules['./md/app-pcss.md'] as string} />
+  </TabItem>
+  <TabItem title='tailwind.config.cjs'>
+    <p>Update <Code>tailwindcss.config.cjs</Code></p>
+    <p>Check more primary colors at <A href='https://github.com/shinokada/runes-webkit/blob/main/tailwind.config.cjs'>here</A>.</p>
 
-<p>Enable <Code>compilerOptions</Code></p>:
+    <HighlightCompo codeLang="ts" code={modules['./md/tailwind-config.md'] as string} />
+  </TabItem>
+</Tabs>
 
-<HighlightCompo codeLang="ts" code={modules['./md/svelte-config-js.md'] as string} />
 
-<H3>package.json</H3>
-
-<p>Update <Code>package.json</Code> by updating <Code>name, version</Code> and add the following and update <Code>keywords</Code>, <Code>contributors</Code>  that is the original author, and all URLs:</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/package-json.md'] as string} />
-
-<H3>vite.config.ts</H3>
-
-<HighlightCompo codeLang="ts" code={modules['./md/vite-config.md'] as string} />
-
-<H3>runeswebkit.css</H3>
-
-<p>Import <Code>runeswebkit.css</Code> in the <Code>app.postcss</Code> or <Code>app.pcss</Code> file. To overwrite the default style, add your style in the <Code>app.postcss</Code> or <Code>app.pcss</Code> file.</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/app-pcss.md'] as string} />
-
-<H3>tailwind.config.cjs</H3>
-<p>Update <Code>tailwindcss.config.cjs</Code></p>
-<p>Check more primary colors at <A href='https://github.com/shinokada/runes-webkit/blob/main/tailwind.config.cjs'>here</A>.</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/tailwind-config.md'] as string} />
-
-<H2>Main Layout</H2>
+<H2>Layout</H2>
 
 <p>Create <Code>+layout.svelte, utils/Nav.svelte, utils/DynamicCodeBlockStyle.svelte</Code> and create a directory named <Code>utils/highlight</Code> and add all styles to it.</p>
 
-<H3>+layout.svelte</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/main-layout.md'] as string} />
+<Tabs>
+  <TabItem open title="+layout.svelte">
+    <p>Add the following to the <Code>+layout.svelte</Code>:</p>
+    <HighlightCompo codeLang="ts" code={modules['./md/main-layout.md'] as string} />
+  </TabItem>
+  <TabItem title="Nav.svelte">
+    <p>Add the following to the <Code>utils/Nav.svelte</Code>:</p>
+    <HighlightCompo codeLang="ts" code={modules['./md/utils-nav.md'] as string} />
+  </TabItem>
+  <TabItem title="Dynamic Code Block Style">
+    <p>Add the following to the <Code>utils/DynamicCodeBlockStyle.svelte</Code>:</p>
+    <HighlightCompo codeLang="ts" code={modules['./md/utils-dynamic-code-block-style.md'] as string} />
+  </TabItem>
+</Tabs>
 
-<H3>utils/Nav.svelte</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/utils-nav.md'] as string} />
+<H2>Style</H2>
 
-<H3>utils/DynamicCodeBlockStyle.svelte</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/utils-dynamic-code-block-style.md'] as string} />
+<p>There are two ways to style components.</p>
+<p>Use Developer tools to find CSS class names. It starts and ends with underscore, like <Code>_iconPage_div_1_</Code>.</p>
 
+<p>The first part is the abbriviation of the component name and the second part is tag name.</p>
+
+<p>The props names are without underscore, like <Code>iconPage_div_1</Code>. Use the props name to add the styles to a component.</p>
+
+<p>Another way is to add style to the <Code>app.pcss</Code> file using a class name with underbars, like <Code>_iconPage_div_1_</Code>, etc.</p>
 <H2>Guide Directory Layout</H2>
 
 <p>Add the following to the <Code>guide/+layout.svelte</Code>:</p>
@@ -162,13 +177,35 @@
 <H2>Icon Page</H2>
 <p>Icon page uses IconPage component with threeTabs and titel props.</p>
 
-<H3>no-tabs</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/no-tabs.md'] as string} />
-<H3>three-tabs</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/three-tabs.md'] as string} />
-<H3>three-tabs-sizeby-tailwind</H3>
-<HighlightCompo codeLang="ts" code={modules['./md/three-tabs-sizeby-tailwind.md'] as string} />
+<Tabs>
+  <TabItem open title="no-tabs">
+    <HighlightCompo codeLang="ts" code={modules['./md/no-tabs.md'] as string} />
+  </TabItem>
+  <TabItem title="three-tabs">
+    <HighlightCompo codeLang="ts" code={modules['./md/three-tabs.md'] as string} />
+  </TabItem>
+  <TabItem title="three-tabs-sizeby-tailwind">
+    <HighlightCompo codeLang="ts" code={modules['./md/three-tabs-sizeby-tailwind.md'] as string} />
+  </TabItem>
+</Tabs>
+
+
 
 <H2>Tests</H2>
 
 <p>Please refer to <A href='https://github.com/shinokada/runes-webkit/blob/main/tests/test.ts'>tests/test.ts</A></p>
+
+<Tabs>
+  <TabItem open title="+layout.server.ts">
+    <HighlightCompo codeLang="ts" code={modules['./md/layout-server.md'] as string} />
+  </TabItem>
+  <TabItem title="tests/home.test.ts">
+    <HighlightCompo codeLang="ts" code={modules['./md/home-test.md'] as string} />
+  </TabItem>
+  <TabItem title="+page.ts">
+    <HighlightCompo codeLang="ts" code={modules['./md/page-ts.md'] as string} />
+  </TabItem>
+  <TabItem title="tests/page.test.ts">
+    <HighlightCompo codeLang="ts" code={modules['./md/page-test.md'] as string} />
+  </TabItem>
+</Tabs>

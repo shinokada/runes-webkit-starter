@@ -16,14 +16,14 @@
 </script>
 
 <div class="relative h-full max-w-7xl mx-auto overflow-y-auto px-8">
-  <SupportBanner>
-      To Keep It Going, Please Show Your Love.<a href='https://ko-fi.com/Z8Z2CHALG' target='_blank'><img height='40' style='border:0px;height:40px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' /></a>
-  </SupportBanner>
+<SupportBanner>
+    To Keep It Going, Please Show Your Love.<a href='https://ko-fi.com/Z8Z2CHALG' target='_blank'><img height='40' style='border:0px;height:40px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' /></a>
+</SupportBanner>
 
-  <h1 class='flex justify-center my-8'>{removeHyphensAndCapitalize(__NAME__)}</h1>
-  <h2 class='flex justify-center my-8'><A href ='/how-to-use' aclass='underline'>This is a demo page. Please read  How to use page.</A> </h2>
-  <HomeCards cards={filteredCards}/>
-  <h2 class='flex justify-center my-8'>Info</h2>
-  <HomeCards cards={info} />
-  <TechInfo {...newPkg} />
+<h1 class='flex justify-center my-8'>{removeHyphensAndCapitalize(__NAME__)}</h1>
+<h2 class='flex justify-center my-8'><A href ='/how-to-use' aclass='underline'>This is a demo page. Please read  How to use page.</A> </h2>
+<HomeCards cards={filteredCards}/>
+<h2 class='flex justify-center my-8'>Info</h2>
+<HomeCards cards={info} />
+<TechInfo {...newPkg} />
 </div>
