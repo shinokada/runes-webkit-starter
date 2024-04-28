@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { HighlightCompo, CodeWrapper, Code, H2, H3 } from 'runes-webkit';
+  import { HighlightCompo, CodeWrapper, Code, H2, H3 } from '$lib';
   import { List, Li, A, Tabs, TabItem } from 'svelte-5-ui-lib';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -18,6 +18,10 @@
 
 <List tag='ul'>
   <Li>package.json</Li>
+  <Li>change <Code>.git</Code> directory and check if it is <Code>svelte-5-runes</Code> branch</Li>
+  <Li>change <Code>.dark_bg_theme</Code> in <Code>app.pcss</Code></Li>
+  <Li>change <Code>primary</Code> in <Code>tailwind.config.cjs</Code></Li>
+  <Li>change <Code>CHANGELOG</Code></Li>
   <Li>tests in the tests directory</Li>
   <Li>Use global search to replace runes-webkit-starter with your package name</Li>
   <Li>Remove or change the name of three-tabs, three-tabs-sizedbytailwind, and no-tabs directories</Li>
