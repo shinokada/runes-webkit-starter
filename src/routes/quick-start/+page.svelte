@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { HighlightCompo, CodeWrapper, Code, H2, H3 } from '$lib';
+  import { HighlightCompo, CodeWrapper, Code, H2, H3 } from 'runes-webkit';
   import { List, Li, A, Tabs, TabItem, Checkbox } from 'svelte-5-ui-lib';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
