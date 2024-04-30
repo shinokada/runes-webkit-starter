@@ -80,8 +80,7 @@
     "!dist/**/*.spec.*"
   ],
   "peerDependencies": {
-    "@sveltejs/kit": "^2.5.5",
-    "svelte": "^5.0.0-next.95"
+    "svelte": "^5.0.0"
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
