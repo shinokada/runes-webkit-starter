@@ -3,6 +3,7 @@ import type { MetaProps } from 'runes-meta-tags';
 const title = 'Icons - Svelte Remix'
 const description = 'Easily Find & Copy SVG Icon name for Your Project'
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-remix'
+const ogUrl = 'http://localhost:4173/icons'
 
 export const load = ({ url }) => {
   const pageMetaTags = Object.freeze({
@@ -11,7 +12,8 @@ export const load = ({ url }) => {
     og: {
       title,
       description,
-      image: imgUrl
+      image: imgUrl,
+      url: ogUrl
     },
     twitter: {
       title,
