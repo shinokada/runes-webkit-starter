@@ -1,5 +1,33 @@
 <script lang="ts">
-  import { HighlightCompo, CodeWrapper, Code, H2, H3, removeHyphensAndCapitalize } from 'runes-webkit';
+  import { HighlightCompo, Code, H2 } from 'runes-webkit';
+  import { License, StaticBadge, NpmVersion, NpmDownloads } from 'svelte-shields'
+  import type { StaticBadgePropsType, NpmVersionPropsType, LicensePropsType, NpmDownloadsPropsType } from 'svelte-shields';
+
+  const sponsor: StaticBadgePropsType = {
+    badgeContent: 'Sponsor-❤-blue',
+    logo: 'GitHub',
+    color:'fe8e86',
+    link: ['https://github.com/sponsors/shinokada', 'https://github.com/sponsors/shinokada']
+  }
+
+  const npmVersion: NpmVersionPropsType ={
+    packageName: 'svelte-remix',
+    logo: 'npm',
+    link: ['https://www.npmjs.com/package/svelte-remix', 'https://github.com/shinokada/svelte-remix']
+  }
+
+  const license: LicensePropsType = {
+    licenseType: 'github',
+    user: 'shinokada',
+    repo: 'svelte-remix',
+    link: ['https://github.com/shinokada/svelte-remix/blob/master/LICENSE', 'https://github.com/shinokada/svelte-remix/blob/master/LICENSE']
+  }
+
+  const downloads: NpmDownloadsPropsType = {
+    packageName: 'svelte-remix',
+    logo: 'npm',
+    link:['https://www.npmjs.com/package/svelte-remix']
+  }
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -11,18 +39,11 @@
 <h1>Getting Started - Svelte Remix v1</h1>
 
 <div class="my-8 flex gap-2">
-  <a href="https://github.com/sponsors/shinokada" target="_blank"
-    ><img
-      src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86"
-      alt="sponsor"
-    /></a
-  >
-  <a href="https://www.npmjs.com/package/svelte-remix" rel="nofollow" target="_blank"
-    ><img src="https://img.shields.io/npm/v/svelte-remix" alt="npm" /></a
-  >
-  <a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank"
-    ><img src="https://img.shields.io/github/license/shinokada/svelte-remix" alt="License" /></a
-  >
+  <StaticBadge {...sponsor} />
+  <NpmVersion {...npmVersion}/>
+  <License {...license} />
+  <NpmDownloads {...downloads}/>
+  
   <a href="https://www.npmjs.com/package/svelte-remix" rel="nofollow" target="_blank"
     ><img src="https://img.shields.io/npm/dw/svelte-remix.svg" alt="npm" /></a
   >
