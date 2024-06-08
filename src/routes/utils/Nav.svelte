@@ -103,11 +103,13 @@
     </svg>
   </button>
     {#if siteName}
-			<NavBrand {siteName} spanclass="self-center whitespace-nowrap text-2xl font-semibold text-primary-900 dark:text-primary-500" />
+			<NavBrand {siteName} spanclass="text-lg sm:text-xl md:text-3xl self-center whitespace-nowrap font-semibold text-primary-900 dark:text-primary-500" />
     {/if}
 			<div class="ml-auto flex items-center lg:order-1">
         {#if include}
-				<DynamicCodeBlockStyle />
+        <div class="hidden sm:block">
+          <DynamicCodeBlockStyle />
+        </div>
         {/if}
         <DotsHorizontalOutline withEvents onclick={dropdown.toggle} class="dark:text-white ml-6 mr-4" size="lg" />
       <div class="relative">
