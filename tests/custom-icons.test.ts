@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Custom icons page has expected h1, meta title', async ({ page }) => {
-  await expect(page.getByRole('heading', { name: title })).toBeVisible();
+  await expect(page.getByRole('heading', { name: title, level: 1 })).toBeVisible();
 });
 
 test('Custom icons page has expected meta title', async ({ page }) => {
