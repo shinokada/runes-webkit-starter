@@ -65,7 +65,7 @@
 <H2>aria-label</H2>
 
 <p>
-  All icons have aria-label. For example <Code>AdminLineUserFaces</Code> has <Code
+  All icons have aria-label. For example <Code>AcademicCap</Code> has <Code
     >aria-label="admin line user faces"</Code
   >. Use <Code>ariaLabel</Code> prop to modify the <Code>aria-label</Code> value.
 </p>

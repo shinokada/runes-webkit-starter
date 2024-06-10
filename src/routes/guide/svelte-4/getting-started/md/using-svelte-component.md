@@ -1,5 +1,5 @@
 <script>
-  import { AdminLineUserFaces } from 'svelte-remix';
+  import { AcademicCap } from 'svelte-remix';
 </script>
 
-<svelte:component this="{AdminLineUserFaces}" />
+<svelte:component this="{AcademicCap}" />
