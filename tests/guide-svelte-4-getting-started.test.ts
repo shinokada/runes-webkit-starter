@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test';
 const title = 'Getting Started - Svelte Remix v1'
 const description = 'How to get started with Svelte Remix v1'
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-remix'
+const ogUrl = 'http://localhost:4173/guide/svelte-4/getting-started'
 
 test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);
@@ -28,12 +29,9 @@ test('Guide home page has expected meta og', async ({ page }) => {
   const metaOgDescription = page.locator('meta[property="og:description"]');
   await expect(metaOgDescription).toHaveAttribute('content', description);
   const metaOgUrl = page.locator('meta[property="og:url"]');
-  await expect(metaOgUrl).toHaveAttribute('content', 'http://localhost:4173/guide/svelte-4/getting-started');
+  await expect(metaOgUrl).toHaveAttribute('content', ogUrl);
   const metaOgImage = page.locator('meta[property="og:image"]');
-  await expect(metaOgImage).toHaveAttribute(
-    'content',
-    imgUrl
-  );
+  await expect(metaOgImage).toHaveAttribute( 'content', imgUrl );
 });
 
 test('Guide home page has expected meta twitter', async ({ page }) => {
@@ -42,8 +40,5 @@ test('Guide home page has expected meta twitter', async ({ page }) => {
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', description);
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
-  await expect(metaTwitterImage).toHaveAttribute(
-    'content',
-    imgUrl
-  );
+  await expect(metaTwitterImage).toHaveAttribute( 'content', imgUrl );
 });
