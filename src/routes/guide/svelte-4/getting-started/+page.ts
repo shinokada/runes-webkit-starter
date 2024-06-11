@@ -11,7 +11,8 @@ export const load = ({ url }) => {
     og: {
       title,
       description,
-      image: imgUrl
+      image: imgUrl,
+      url: url.href
     },
     twitter: {
       title,

@@ -4,14 +4,15 @@ const title = 'Props - Runes Webkit Starter v1'
 const description = 'How to use Runes Webkit Starter v1 props'
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-heros'
 
-export const load = () => {
+export const load = ({ url }) => {
   const pageMetaTags: MetaProps = {
     title,
     description,
     og: {
       title,
       description,
-      image: imgUrl
+      image: imgUrl,
+      url: url.href
     },
     twitter: {
       title,
