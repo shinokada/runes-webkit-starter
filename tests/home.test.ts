@@ -1,10 +1,9 @@
 import { expect, test } from '@playwright/test';
 
 const title = 'Runes Webkit Starter'
-const description = 'A quick start for a Svelte Runes project.'
-const keywords = 'svelte, runes, webkit, ui, components'
-const imgUrl = 'https://open-graph-vercel.vercel.app/api/runes-webkit-starter'
-const ogUrl = 'http://localhost:4173/'
+const description = 'TailwindLabs Heroicons for Svelte 4, 5, and Runes'
+const keywords = 'svelte, sveltekit, tailwindcss, icons, heroicons'
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-heros'
 
 test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);
@@ -29,15 +28,16 @@ test('index page has expected meta keywords', async ({ page }) => {
   await expect(metaKeywords).toHaveAttribute('content', keywords);
 });
 
-test('index page has expected meta og', async ({ page }) => {
+test('index page has expected meta og', async ({ page, baseURL }) => {
   const metaOgTitle = page.locator('meta[property="og:title"]');
   await expect(metaOgTitle).toHaveAttribute('content', title);
   const metaOgDescription = page.locator('meta[property="og:description"]');
   await expect(metaOgDescription).toHaveAttribute('content', description);
   const metaOgUrl = page.locator('meta[property="og:url"]');
-  await expect(metaOgUrl).toHaveAttribute('content', ogUrl);
+  const url = baseURL + '/';
+  await expect(metaOgUrl).toHaveAttribute('content', url);
   const metaOgImage = page.locator('meta[property="og:image"]');
-  await expect(metaOgImage).toHaveAttribute( 'content', imgUrl );
+  await expect(metaOgImage).toHaveAttribute('content', imgUrl);
 });
 
 test('index page has expected meta twitter', async ({ page }) => {
@@ -46,5 +46,5 @@ test('index page has expected meta twitter', async ({ page }) => {
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', description);
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
-  await expect(metaTwitterImage).toHaveAttribute( 'content', imgUrl );
+  await expect(metaTwitterImage).toHaveAttribute('content', imgUrl);
 });

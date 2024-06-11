@@ -36,7 +36,7 @@
   });
 </script>
 
-<h1>Getting Started - Svelte Remix v1</h1>
+<h1>Getting Started - Runes Webkit Starter v1</h1>
 
 <div class="my-8 flex gap-2">
   <StaticBadge {...sponsor} />
@@ -56,7 +56,7 @@
 
 <H2>Installation</H2>
 
-<p>Install Svelte and Svelte Remix:</p>
+<p>Install Svelte and Runes Webkit Starter:</p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/installation.md'] as string} />
 
