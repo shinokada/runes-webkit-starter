@@ -1,7 +1,7 @@
 <script lang="ts">
   import { HighlightCompo, Code, H2 } from 'runes-webkit';
-  import { License, StaticBadge, NpmVersion, NpmDownloads } from 'svelte-shields'
-  import type { StaticBadgePropsType, NpmVersionPropsType, LicensePropsType, NpmDownloadsPropsType } from 'svelte-shields';
+  import { License, StaticBadge, NpmVersion, NpmDownload } from 'svelte-shields'
+  import type { StaticBadgePropsType, NpmVersionPropsType, LicensePropsType, NpmDownloadPropsType } from 'svelte-shields';
 
   const sponsor: StaticBadgePropsType = {
     badgeContent: 'Sponsor-❤-blue',
@@ -17,13 +17,13 @@
   }
 
   const license: LicensePropsType = {
-    licenseType: 'github',
-    user: 'shinokada',
-    repo: 'svelte-remix',
+    source: 'github',
+    github_user: 'shinokada',
+    github_repo: 'svelte-remix',
     link: ['https://github.com/shinokada/svelte-remix/blob/master/LICENSE', 'https://github.com/shinokada/svelte-remix/blob/master/LICENSE']
   }
 
-  const downloads: NpmDownloadsPropsType = {
+  const downloads: NpmDownloadPropsType = {
     packageName: 'svelte-remix',
     logo: 'npm',
     link:['https://www.npmjs.com/package/svelte-remix']
@@ -42,11 +42,7 @@
   <StaticBadge {...sponsor} />
   <NpmVersion {...npmVersion}/>
   <License {...license} />
-  <NpmDownloads {...downloads}/>
-  
-  <a href="https://www.npmjs.com/package/svelte-remix" rel="nofollow" target="_blank"
-    ><img src="https://img.shields.io/npm/dw/svelte-remix.svg" alt="npm" /></a
-  >
+  <NpmDownload {...downloads}/>
 </div>
 
 <H2>Requirements</H2>
