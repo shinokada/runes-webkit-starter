@@ -64,8 +64,8 @@
 
 </script>
 
-<RunesMetaTags {...metaTags} />
 <Runatics {analyticsId} />
+<RunesMetaTags {...metaTags} />
 
 <Nav {lis} {siteName} {twitterUrl} {githubUrl} urlsToIncludeSwitcher={urlsToIncludeSwitcherAndSidebar}/>
 <div class="lg:flex">  

@@ -103,7 +103,7 @@
     </svg>
   </button>
     {#if siteName}
-			<NavBrand {siteName} spanclass="text-lg sm:text-xl md:text-3xl self-center whitespace-nowrap font-semibold text-primary-900 dark:text-primary-500" />
+			<NavBrand {siteName} spanClass="text-lg sm:text-xl md:text-3xl self-center whitespace-nowrap font-semibold text-primary-900 dark:text-primary-500" />
     {/if}
 			<div class="ml-auto flex items-center lg:order-1">
         {#if include}
@@ -115,7 +115,7 @@
       <div class="relative">
         <Dropdown {dropdownStatus}
         {closeDropdown}
-        transitionParams={dropdownTransitionParams} divclass="absolute -left-[47px] top-8 w-12 pl-1.5">
+        transitionParams={dropdownTransitionParams} divClass="absolute -left-[47px] top-8 w-12 pl-1.5">
           {#if twitterUrl}
           <DropdownItem href={twitterUrl} target="_blank" aclass='p-2 m-0'><XSolid /></DropdownItem>
           {/if}
@@ -132,7 +132,7 @@
 			</div>
 		{/snippet}
     {#if lis}
-    <NavUl {ulclass}>
+    <NavUl class={ulclass}>
       {@render navLi(lis)}
     </NavUl>
     {/if}
@@ -144,7 +144,7 @@
   drawerStatus={navDrawerStatus}
   closeDrawer={closeNavDrawer}
   {transitionParams}
-  divclass='dark_bg_theme'
+  divClass='dark_bg_theme'
 >
   <div class="flex items-center pb-4">
     <h5
