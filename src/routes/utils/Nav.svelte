@@ -120,7 +120,7 @@
           <DropdownItem href={twitterUrl} target="_blank" aclass='p-2 m-0'><XSolid /></DropdownItem>
           {/if}
           {#if githubUrl}
-          <DropdownItem href="{githubUrl}" target="_blank" aclass='p-2 m-0'>
+          <DropdownItem href={githubUrl} target="_blank" aclass='p-2 m-0'>
               <GithubSolid />
           </DropdownItem>
           {/if}
