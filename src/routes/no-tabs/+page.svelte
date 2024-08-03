@@ -10,5 +10,5 @@
 <IconPage 
 minSize = '60'
 defaultSize='80' maxSize='100'
-i_p_div_3='lg:grid-cols-3 md:grid-cols-2 '
+div3Class='lg:grid-cols-3 md:grid-cols-2 '
 icons={keyIcons as Component} threeTabs={false} title="No Tabs" />
