@@ -14,7 +14,7 @@
   type LiType = {
     name: string;
     href: string;
-    icon?: Component;
+    Icon?: Component;
   }
   interface Props{
     lis?: LiType[];
@@ -67,9 +67,9 @@
 </script>
 
 {#snippet navLi(lis)}
-  {#each lis as { name, href, icon }}
-    {#if icon}
-      <icon class="w-8 h-8 mb-3 {random_tailwind_color()}"></icon>
+  {#each lis as { name, href, Icon }}
+    {#if Icon}
+      <Icon class="w-8 h-8 mb-3 {random_tailwind_color()}"></Icon>
     {/if}
   <NavLi {href}>{name}</NavLi>
   {/each}
