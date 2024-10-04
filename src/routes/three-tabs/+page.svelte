@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Component } from 'svelte';
-  import { IconPage, filterIconsByKeyword } from 'runes-webkit'
-  import * as icons from '../awesome-samples'
+  import { IconPage, filterIconsByKeyword } from 'runes-webkit';
+  import * as icons from '../awesome-samples';
   const keywordsToInclude = 'Solid';
   const keyIcons = filterIconsByKeyword(icons, keywordsToInclude);
 </script>

@@ -1,6 +1,15 @@
 <script lang="ts">
-  
-  import { removeHyphensAndCapitalize, HomeCards, SupportBanner, TechInfo, BellActiveAltOutline, InfoCircleOutline, cards, info, type CardType } from 'runes-webkit';
+  import {
+    removeHyphensAndCapitalize,
+    HomeCards,
+    SupportBanner,
+    TechInfo,
+    BellActiveAltOutline,
+    InfoCircleOutline,
+    cards,
+    info,
+    type CardType
+  } from 'runes-webkit';
   import { A } from 'svelte-5-ui-lib';
   const brand = {
     title: `${removeHyphensAndCapitalize(__NAME__)}`,
@@ -17,15 +26,15 @@
     Icon: InfoCircleOutline,
     href: `${__ORIGINAL_SOURCE_URL__}`,
     icon_class: 'text-orange-500'
-  }
+  };
   const license = {
     title: 'License',
     description: 'Released under the MIT License.',
     Icon: InfoCircleOutline,
     href: `https://github.com/shinokada/${__NAME__}/blob/main/LICENSE`,
     icon_class: 'text-lime-500'
-  }
- 
+  };
+
   const newInfo = [originalSource, license, ...info];
   const pkg = {
     pkgName: __NAME__,
@@ -41,15 +50,24 @@
   };
 </script>
 
-<div class="relative h-full max-w-7xl mx-auto overflow-y-auto px-8 pb-20 mt-8">
-<SupportBanner>
-    To Keep It Going, Please Show Your Love.<a href='https://ko-fi.com/Z8Z2CHALG' target='_blank'><img height='40' style='border:0px;height:40px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' /></a>
-</SupportBanner>
+<div class="relative mx-auto mt-8 h-full max-w-7xl overflow-y-auto px-8 pb-20">
+  <SupportBanner>
+    To Keep It Going, Please Show Your Love.<a href="https://ko-fi.com/Z8Z2CHALG" target="_blank"
+      ><img
+        height="40"
+        style="border:0px;height:40px;"
+        src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
+        alt="Buy Me a Coffee at ko-fi.com"
+      /></a
+    >
+  </SupportBanner>
 
-<h1 class='flex justify-center my-8'>Runes Webkit Starter</h1>
-<h2 class='flex justify-center my-8'><A href ='/how-to-use' class='underline'>This is a demo page. Please read  How to use page.</A> </h2>
-<HomeCards cards={filteredCards as CardType[]}/>
-<h2 class='flex justify-center my-8'>Info</h2>
-<HomeCards cards={newInfo as CardType[]} />
-<TechInfo {...pkg} />
+  <h1 class="my-8 flex justify-center">Runes Webkit Starter</h1>
+  <h2 class="my-8 flex justify-center">
+    <A href="/how-to-use" class="underline">This is a demo page. Please read How to use page.</A>
+  </h2>
+  <HomeCards cards={filteredCards as CardType[]} />
+  <h2 class="my-8 flex justify-center">Info</h2>
+  <HomeCards cards={newInfo as CardType[]} />
+  <TechInfo {...pkg} />
 </div>

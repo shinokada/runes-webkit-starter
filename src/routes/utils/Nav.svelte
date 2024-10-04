@@ -1,23 +1,41 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import type { Component } from 'svelte';
-	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Dropdown, DropdownUl, DropdownLi, Drawer } from 'svelte-5-ui-lib';
-	import { page } from '$app/stores';
-  import { GithubSolid, random_tailwind_color, DotsHorizontalOutline, XSolid, Sidebar, sidebarList } from 'runes-webkit'
+  import {
+    Navbar,
+    NavLi,
+    NavBrand,
+    NavUl,
+    uiHelpers,
+    Darkmode,
+    Dropdown,
+    DropdownUl,
+    DropdownLi,
+    Drawer
+  } from 'svelte-5-ui-lib';
+  import { page } from '$app/stores';
+  import {
+    GithubSolid,
+    random_tailwind_color,
+    DotsHorizontalOutline,
+    XSolid,
+    Sidebar,
+    sidebarList
+  } from 'runes-webkit';
   import DynamicCodeBlockStyle from './DynamicCodeBlockStyle.svelte';
   import { sineIn } from 'svelte/easing';
   import { newSidebarList } from './helper';
 
   function isIncluded(url: string, allowedUrls: string[]): boolean {
-    return allowedUrls.some(allowedUrl => url.startsWith(allowedUrl));
+    return allowedUrls.some((allowedUrl) => url.startsWith(allowedUrl));
   }
 
   type LiType = {
     name: string;
     href: string;
     Icon?: Component;
-  }
-  interface Props{
+  };
+  interface Props {
     lis?: LiType[];
     siteName?: string;
     twitterUrl?: string;
@@ -25,7 +43,15 @@
     headerClass?: string;
     urlsToIncludeSwitcher?: string[];
   }
-  let {  lis, siteName, twitterUrl, githubUrl, headerClass, urlsToIncludeSwitcher = ['/guide'], ...restProps}: Props = $props();
+  let {
+    lis,
+    siteName,
+    twitterUrl,
+    githubUrl,
+    headerClass,
+    urlsToIncludeSwitcher = ['/guide'],
+    ...restProps
+  }: Props = $props();
 
   let transitionParams = {
     x: -320,
@@ -46,106 +72,121 @@
   const closeNavDrawer = navDrawer.close;
 
   let currentUrl = $state($page.url.pathname);
-	let nav = uiHelpers();
+  let nav = uiHelpers();
 
   let include = $derived(isIncluded(currentUrl, urlsToIncludeSwitcher));
 
-	let navStatus = $state(false);
-	let toggleNav = nav.toggle;
-	let closeNav = nav.close;
-	let divClass = 'ml-auto w-full';
-	let ulclass = 'dark:lg:bg-transparent lg:space-x-4';
-	let navClass = 'w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4';
-  let headerCls = twMerge('sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-gray-100 dark:border-gray-600 dark:bg-sky-950', headerClass)
+  let navStatus = $state(false);
+  let toggleNav = nav.toggle;
+  let closeNav = nav.close;
+  let divClass = 'ml-auto w-full';
+  let ulclass = 'dark:lg:bg-transparent lg:space-x-4';
+  let navClass =
+    'w-full divide-gray-200 border-gray-200 bg-gray-50 dark_bg_theme text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:transparent dark:text-gray-400 sm:px-4';
+  let headerCls = twMerge(
+    'sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-gray-100 dark:border-gray-600 dark:bg-sky-950',
+    headerClass
+  );
 
-	$effect(() => {
+  $effect(() => {
     navDrawerStatus = navDrawer.isOpen;
-		navStatus = nav.isOpen;
+    navStatus = nav.isOpen;
     dropdownStatus = dropdown.isOpen;
     currentUrl = $page.url.pathname;
-	});
-  
+  });
 </script>
 
 {#snippet navLi(lis: LiType[])}
   {#each lis as { name, href, Icon }}
     {#if Icon}
-      <Icon class="w-8 h-8 mb-3 {random_tailwind_color()}" />
+      <Icon class="mb-3 h-8 w-8 {random_tailwind_color()}" />
     {/if}
-  <NavLi {href}>{name}</NavLi>
+    <NavLi {href}>{name}</NavLi>
   {/each}
 {/snippet}
 
 <header class={headerCls}>
-	<Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="lg" fluid div2Class={divClass}>
-		{#snippet brand()}
-    <button
-    onclick={navDrawer.toggle}
-    type="button"
-    class="z-50 mr-4 mt-1 lg:hidden"
-    aria-controls="navbar-default"
-  >
-    <span class="sr-only">Open drawer menu</span>
-    <svg
-      class="h-5 w-5"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 17 14"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M1 1h15M1 7h15M1 13h15"
-      />
-    </svg>
-  </button>
-    {#if siteName}
-			<NavBrand {siteName} spanClass="text-lg sm:text-xl md:text-3xl self-center whitespace-nowrap font-semibold text-primary-900 dark:text-primary-500" />
-    {/if}
-			<div class="ml-auto flex items-center lg:order-1">
+  <Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="lg" fluid div2Class={divClass}>
+    {#snippet brand()}
+      <button
+        onclick={navDrawer.toggle}
+        type="button"
+        class="z-50 mr-4 mt-1 lg:hidden"
+        aria-controls="navbar-default"
+      >
+        <span class="sr-only">Open drawer menu</span>
+        <svg
+          class="h-5 w-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+      </button>
+      {#if siteName}
+        <NavBrand
+          {siteName}
+          spanClass="text-lg sm:text-xl md:text-3xl self-center whitespace-nowrap font-semibold text-primary-900 dark:text-primary-500"
+        />
+      {/if}
+      <div class="ml-auto flex items-center lg:order-1">
         {#if include}
-        <div class="hidden sm:block">
-          <DynamicCodeBlockStyle />
-        </div>
+          <div class="hidden sm:block">
+            <DynamicCodeBlockStyle />
+          </div>
         {/if}
-        <DotsHorizontalOutline onclick={dropdown.toggle} class="dark:text-white ml-6 mr-4" size="lg" />
-      <div class="relative">
-        <Dropdown {dropdownStatus}
-        {closeDropdown}
-        params={dropdownTransitionParams} class="absolute -left-[50px] top-2 w-12 pl-1.5">
-          <DropdownUl>
-          {#if twitterUrl}
-          <DropdownLi href={twitterUrl} target="_blank" aClass='p-2 m-0'><XSolid /></DropdownLi>
-          {/if}
-          {#if githubUrl}
-          <DropdownLi href={githubUrl} target="_blank" aClass='p-2 m-0'>
-              <GithubSolid />
-          </DropdownLi>
-          {/if}
-          <DropdownLi>
-            <Darkmode class="p-2 m-0"/>
-          </DropdownLi>
-          </DropdownUl>
-        </Dropdown>
+        <DotsHorizontalOutline
+          onclick={dropdown.toggle}
+          class="ml-6 mr-4 dark:text-white"
+          size="lg"
+        />
+        <div class="relative">
+          <Dropdown
+            {dropdownStatus}
+            {closeDropdown}
+            params={dropdownTransitionParams}
+            class="absolute -left-[50px] top-2 w-12 pl-1.5"
+          >
+            <DropdownUl>
+              {#if twitterUrl}
+                <DropdownLi href={twitterUrl} target="_blank" aClass="p-2 m-0"
+                  ><XSolid /></DropdownLi
+                >
+              {/if}
+              {#if githubUrl}
+                <DropdownLi href={githubUrl} target="_blank" aClass="p-2 m-0">
+                  <GithubSolid />
+                </DropdownLi>
+              {/if}
+              <DropdownLi>
+                <Darkmode class="m-0 p-2" />
+              </DropdownLi>
+            </DropdownUl>
+          </Dropdown>
+        </div>
       </div>
-			</div>
-		{/snippet}
+    {/snippet}
     {#if lis}
-    <NavUl class={ulclass}>
-      {@render navLi(lis)}
-    </NavUl>
+      <NavUl class={ulclass}>
+        {@render navLi(lis)}
+      </NavUl>
     {/if}
-	</Navbar>
+  </Navbar>
 </header>
 
 <Drawer
   drawerStatus={navDrawerStatus}
   closeDrawer={closeNavDrawer}
   params={transitionParams}
-  class='w-64 dark_bg_theme bg-gray-50'
+  class="dark_bg_theme w-64 bg-gray-50"
 >
   <div class="flex items-center pb-4">
     <h5
