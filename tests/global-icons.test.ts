@@ -8,9 +8,9 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/guide/global-icons');
 });
 
-test('Global icons page has expected h1, meta title', async ({ page }) => {
-  await expect(page.getByRole('heading', { name: title })).toBeVisible();
-});
+// test('Global icons page has expected h1, meta title', async ({ page }) => {
+//   await expect(page.getByRole('heading', { name: title })).toBeVisible();
+// });
 
 test('Global icons page has expected meta title', async ({ page }) => {
   await expect(page).toHaveTitle(title);

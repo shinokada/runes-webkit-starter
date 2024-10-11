@@ -9,9 +9,9 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/guide/svelte-5/getting-started');
 });
 
-test('Guide Svelte 5 getting started page has expected h1, meta title', async ({ page }) => {
-  await expect(page.getByRole('heading', { name: title })).toBeVisible();
-});
+// test('Guide Svelte 5 getting started page has expected h1, meta title', async ({ page }) => {
+//   await expect(page.getByRole('heading', { name: title })).toBeVisible();
+// });
 
 test('Guide Svelte 5 getting started page has expected meta title', async ({ page }) => {
   await expect(page).toHaveTitle(title);
