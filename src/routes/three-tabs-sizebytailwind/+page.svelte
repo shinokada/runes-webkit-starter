@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Component } from 'svelte';
   import { IconPage, filterIconsByKeyword } from 'runes-webkit';
   import * as icons from '../flowbite-samples';
 
@@ -8,7 +7,7 @@
 </script>
 
 <IconPage
-  icons={keyIcons as Component}
+  icons={keyIcons}
   sizeByTailwind
   title="Three Tabs: Size by Tailwind"
   defaultSize="6"

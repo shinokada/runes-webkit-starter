@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { HighlightCompo, CodeWrapper, Code, H2, H3 } from 'runes-webkit';
-  // import MainLayout from '../+layout.svelte?raw'
+  import { HighlightCompo, Code, H1, H2 } from 'runes-webkit';
   import { List, Li, A, Tabs, TabItem } from 'svelte-5-ui-lib';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -9,29 +8,29 @@
   });
 </script>
 
-<h1>Documentation</h1>
+<H1>Documentation</H1>
 
 <p>This library contails following components for Svelte Runes project.</p>
 
 <Tabs>
-  <TabItem open title="Components">
+  <TabItem open title="Features">
     <List tag="ul">
+      <Li>Code block style changer</Li>
+      <Li>On This Page</Li>
+      <Li>Code wrapper</Li>
+      <Li>HighlightCompo</Li>
+      <Li>Home cards</Li>
+      <Li>Icon page</Li>
+      <Li>Doc page</Li>
+      <Li>Footer</Li>
+      <Li>Sidebar</Li>
+      <Li>Support banner</Li>
+      <Li>Tech info</Li>
+      <Li>Toc</Li>
       <Li>Anchor</Li>
       <Li>Code</Li>
-      <Li>CodeWrapper</Li>
-      <Li>DocPage</Li>
-      <Li>Footer</Li>
       <Li>H2, H3</Li>
       <Li>Helper functions</Li>
-      <Li>HighlightCompo</Li>
-      <Li>homeCards.json</Li>
-      <Li>HomeCards</Li>
-      <Li>IconPage</Li>
-      <Li>OnThisPage</Li>
-      <Li>Sidebar</Li>
-      <Li>SupportBanner</Li>
-      <Li>TechInfo</Li>
-      <Li>Toc</Li>
     </List>
   </TabItem>
   <TabItem title="Helper functions">
@@ -103,7 +102,7 @@
   Use the <code>utils</code> and <code>+layout.svelte</code> examples how to set up Nav and DynamicCodeBlockStyle.
 </p>
 
-<H2>Runes Webkit Starter</H2>
+<H2>Runes Webkit</H2>
 
 <p>
   If you prefer to use the starter, please refer to <A
@@ -114,7 +113,7 @@
 
 <H2>Installation</H2>
 
-<HighlightCompo codeLang="ts" code={modules['./md/installation.md'] as string} />
+<HighlightCompo codeLang="md" code={modules['./md/installation.md'] as string} />
 
 <H2>Setting</H2>
 
@@ -122,26 +121,28 @@
   <TabItem open title="svelte.config.js">
     <p>Enable <Code>compilerOptions</Code></p>
     :
-    <HighlightCompo codeLang="ts" code={modules['./md/svelte-config-js.md'] as string} />
+    <HighlightCompo
+      code={modules['./md/svelte-config-js.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="package.json">
     <p>
       Update <Code>package.json</Code> by updating <Code>name, version</Code> and add the following and
       update <Code>keywords</Code>, <Code>contributors</Code> that is the original author, and all URLs:
     </p>
-    <HighlightCompo codeLang="ts" code={modules['./md/package-json.md'] as string} />
+    <HighlightCompo
+      codeLang="md"
+      code={modules['./md/package-json.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="vite.config.ts">
-    <HighlightCompo codeLang="ts" code={modules['./md/vite-config.md'] as string} />
-  </TabItem>
-  <TabItem title="runeswebkit.css">
-    <p>
-      Import <Code>runeswebkit.css</Code> in the <Code>app.postcss</Code> or <Code>app.pcss</Code> file.
-      To overwrite the default style, add your style in the <Code>app.postcss</Code> or <Code
-        >app.pcss</Code
-      > file.
-    </p>
-    <HighlightCompo codeLang="ts" code={modules['./md/app-pcss.md'] as string} />
+    <HighlightCompo
+      codeLang="md"
+      code={modules['./md/vite-config.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="tailwind.config.cjs">
     <p>Update <Code>tailwindcss.config.cjs</Code></p>
@@ -151,7 +152,11 @@
       >.
     </p>
 
-    <HighlightCompo codeLang="ts" code={modules['./md/tailwind-config.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/tailwind-config.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
 </Tabs>
 
@@ -165,17 +170,18 @@
 <Tabs>
   <TabItem open title="+layout.svelte">
     <p>Add the following to the <Code>+layout.svelte</Code>:</p>
-    <HighlightCompo codeLang="ts" code={modules['./md/main-layout.md'] as string} />
-  </TabItem>
-  <TabItem title="Nav.svelte">
-    <p>Add the following to the <Code>utils/Nav.svelte</Code>:</p>
-    <HighlightCompo codeLang="ts" code={modules['./md/utils-nav.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/main-layout.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="Dynamic Code Block Style">
     <p>Add the following to the <Code>utils/DynamicCodeBlockStyle.svelte</Code>:</p>
     <HighlightCompo
       codeLang="ts"
       code={modules['./md/utils-dynamic-code-block-style.md'] as string}
+      contentClass="overflow-y-scroll"
     />
   </TabItem>
 </Tabs>
@@ -237,15 +243,31 @@
 
 <Tabs>
   <TabItem open title="+layout.server.ts">
-    <HighlightCompo codeLang="ts" code={modules['./md/layout-server.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/layout-server.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="tests/home.test.ts">
-    <HighlightCompo codeLang="ts" code={modules['./md/home-test.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/home-test.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="+page.ts">
-    <HighlightCompo codeLang="ts" code={modules['./md/page-ts.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/page-ts.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
   <TabItem title="tests/page.test.ts">
-    <HighlightCompo codeLang="ts" code={modules['./md/page-test.md'] as string} />
+    <HighlightCompo
+      codeLang="ts"
+      code={modules['./md/page-test.md'] as string}
+      contentClass="overflow-y-scroll"
+    />
   </TabItem>
 </Tabs>

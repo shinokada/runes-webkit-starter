@@ -1,12 +1,5 @@
 <script lang="ts">
-  import {
-    HighlightCompo,
-    CodeWrapper,
-    Code,
-    H2,
-    H3,
-    removeHyphensAndCapitalize
-  } from 'runes-webkit';
+  import { HighlightCompo, Code, H1, H2, H3 } from 'runes-webkit';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -15,7 +8,7 @@
   });
 </script>
 
-<h1>Props - Runes Webkit Starter v1</h1>
+<H1>Props - Runes Webkit v1</H1>
 
 <H2>Prop</H2>
 
@@ -72,7 +65,7 @@
 <H2>aria-label</H2>
 
 <p>
-  All icons have aria-label. For example <Code>AcademicCap</Code> has <Code
+  All icons have aria-label. For example <Code>AdminLineUserFaces</Code> has <Code
     >aria-label="admin line user faces"</Code
   >. Use <Code>ariaLabel</Code> prop to modify the <Code>aria-label</Code> value.
 </p>

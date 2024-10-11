@@ -8,11 +8,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/guide/svelte-4/props');
 });
 
-test('Guide Svelte 4 props page has expected h1, meta title', async ({ page }) => {
+test('Guide Svelte 4 props page has expected meta title', async ({ page }) => {
   await expect(page.getByRole('heading', { name: title })).toBeVisible();
 });
 
-test('Guide Svelte 4 props page has expected meta title', async ({ page }) => {
+test('Guide Svelte 4 props page has expected title', async ({ page }) => {
   await expect(page).toHaveTitle(title);
 });
 
