@@ -12,7 +12,8 @@
     DotsHorizontalOutline,
     GithubSolid,
     random_tailwind_color,
-    XSolid, Bluesky
+    XSolid,
+    Bluesky
   } from 'runes-webkit';
   import {
     Navbar,
