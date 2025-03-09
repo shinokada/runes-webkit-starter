@@ -1,59 +1,60 @@
 <script lang="ts">
-  import { HighlightCompo, Code, H2 } from 'runes-webkit';
-  import { License, StaticBadge, NpmVersion, NpmDownload } from 'svelte-shields';
-  import type {
-    StaticBadgePropsType,
-    NpmVersionPropsType,
-    LicensePropsType,
-    NpmDownloadPropsType
-  } from 'svelte-shields';
+	import { HighlightCompo, Code, H1, H2 } from 'runes-webkit';
 
-  const sponsor: StaticBadgePropsType = {
-    badgeContent: 'Sponsor-❤-blue',
-    logo: 'GitHub',
-    color: 'fe8e86',
-    link: ['https://github.com/sponsors/shinokada', 'https://github.com/sponsors/shinokada']
-  };
+	import { License, StaticBadge, NpmVersion, NpmDownload } from 'svelte-shields';
+	import type {
+		StaticBadgePropsType,
+		NpmVersionPropsType,
+		LicensePropsType,
+		NpmDownloadPropsType
+	} from 'svelte-shields';
 
-  const npmVersion: NpmVersionPropsType = {
-    packageName: 'svelte-remix',
-    logo: 'npm',
-    link: [
-      'https://www.npmjs.com/package/svelte-remix',
-      'https://github.com/shinokada/svelte-remix'
-    ]
-  };
+	const sponsor: StaticBadgePropsType = {
+		badgeContent: 'Sponsor-❤-blue',
+		logo: 'GitHub',
+		color: 'fe8e86',
+		link: ['https://github.com/sponsors/shinokada', 'https://github.com/sponsors/shinokada']
+	};
 
-  const license: LicensePropsType = {
-    source: 'github',
-    github_user: 'shinokada',
-    github_repo: 'svelte-remix',
-    link: [
-      'https://github.com/shinokada/svelte-remix/blob/master/LICENSE',
-      'https://github.com/shinokada/svelte-remix/blob/master/LICENSE'
-    ]
-  };
+	const npmVersion: NpmVersionPropsType = {
+		packageName: 'svelte-remix',
+		logo: 'npm',
+		link: [
+			'https://www.npmjs.com/package/svelte-remix',
+			'https://github.com/shinokada/svelte-remix'
+		]
+	};
 
-  const downloads: NpmDownloadPropsType = {
-    packageName: 'svelte-remix',
-    logo: 'npm',
-    link: ['https://www.npmjs.com/package/svelte-remix']
-  };
+	const license: LicensePropsType = {
+		source: 'github',
+		github_user: 'shinokada',
+		github_repo: 'svelte-remix',
+		link: [
+			'https://github.com/shinokada/svelte-remix/blob/master/LICENSE',
+			'https://github.com/shinokada/svelte-remix/blob/master/LICENSE'
+		]
+	};
 
-  const modules = import.meta.glob('./md/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-  });
+	const downloads: NpmDownloadPropsType = {
+		packageName: 'svelte-remix',
+		logo: 'npm',
+		link: ['https://www.npmjs.com/package/svelte-remix']
+	};
+
+	const modules = import.meta.glob('./md/*.md', {
+		query: '?raw',
+		import: 'default',
+		eager: true
+	});
 </script>
 
-<h1>Getting Started - Runes Webkit Starter v1</h1>
+<H1>Getting Started - Runes Webkit Starter v1</H1>
 
 <div class="my-8 flex gap-2">
-  <StaticBadge {...sponsor} />
-  <NpmVersion {...npmVersion} />
-  <License {...license} />
-  <NpmDownload {...downloads} />
+	<StaticBadge {...sponsor} />
+	<NpmVersion {...npmVersion} />
+	<License {...license} />
+	<NpmDownload {...downloads} />
 </div>
 
 <H2>Requirements</H2>
@@ -63,7 +64,7 @@
 
 <H2>Installation</H2>
 
-<p>Install Svelte and Runes Webkit Starter:</p>
+<p>Install Svelte and Svelte Remix:</p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/installation.md'] as string} />
 
@@ -82,16 +83,16 @@
 <H2>IDE support</H2>
 
 <p>
-  If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, or Neovim, hovering
-  over a component name will display a documentation link, features, props, events, etc.
+	If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, or Neovim, hovering
+	over a component name will display a documentation link, features, props, events, etc.
 </p>
 
 <H2>Faster compiling</H2>
 
 <p>
-  If you need only a few icons from this library in your Svelte app, import them directly. This can
-  optimize compilation speed and improve performance by reducing the amount of code processed during
-  compilation.
+	If you need only a few icons from this library in your Svelte app, import them directly. This can
+	optimize compilation speed and improve performance by reducing the amount of code processed during
+	compilation.
 </p>
 
 <HighlightCompo codeLang="ts" code={modules['./md/faster-compiling.md'] as string} />

@@ -1,4 +1,4 @@
-# Runes Webkit
+# Runes Webkit Starter
 
 A collection of reusable Svelte components for building user interfaces for Svelte Runes web applications.
 

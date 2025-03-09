@@ -1,5 +1,5 @@
 <script>
-  import MyIcon from '$lib/MyIcon.svelte';
+  import MyIcon from 'runes-webkit/MyIcon.svelte';
   import { Accessibility } from 'svelte-radix';
 </script>
 

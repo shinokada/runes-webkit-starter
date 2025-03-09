@@ -1,1 +1,1 @@
-<AcademicCap class="h-24 w-24" />
+<AdminLineUserFaces class="h-24 w-24" />

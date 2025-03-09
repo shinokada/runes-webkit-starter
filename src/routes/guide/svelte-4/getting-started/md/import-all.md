@@ -2,5 +2,5 @@
   import * as Icon from 'svelte-remix';
 </script>
 
-<Icon.AcademicCap />
-<Icon.AcademicCap size="30" />
+<Icon.AdminLineUserFaces />
+<Icon.AdminLineUserFaces size="30" />
