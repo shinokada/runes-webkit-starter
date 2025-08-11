@@ -9,7 +9,7 @@
 		cards,
 		info
 	} from 'runes-webkit';
-	import { A } from 'svelte-5-ui-lib';
+	import { A } from 'flowbite-svelte';
 
 	const brand = {
 		title: `${removeHyphensAndCapitalize(__NAME__)}`,
@@ -44,14 +44,13 @@
 		runaticsVersion: __RUNATICS_VERSION__,
 		runesMetaTagsVersion: __RUNES_METATAGS_VERSION__,
 		svelteVersion: __SVELTE_VERSION__,
-		svelteKitVersion: __SVELTEKIT_VERSION__,
-		svelte5uilibVersion: __SVELTE_5_UI_LIB_VERSION__,		svelteRuneHighlight: __SVELTE_RUNE_HIGHLIGHT_VERSION__,
+		svelteKitVersion: __SVELTEKIT_VERSION__,	svelteRuneHighlight: __SVELTE_RUNE_HIGHLIGHT_VERSION__,
 		viteVersion: __VITE_VERSION__
 	};
 </script>
 
 <div class="relative mx-auto mt-8 h-full max-w-7xl overflow-y-auto px-8 pb-20">
-	<SupportBanner class="mt-4">
+	<SupportBanner class="mt-4 relative">
 		To Keep It Going, Please Show Your Love.<a
 			href="https://ko-fi.com/Z8Z2CHALG"
 			target="_blank"
