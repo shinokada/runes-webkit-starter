@@ -226,4 +226,4 @@
   {/if}
   {@render children()}
 </div>
-<Footer {brand} {lis} />
+<Footer {brand} {lis} class="dark:bg-stone-950"/>

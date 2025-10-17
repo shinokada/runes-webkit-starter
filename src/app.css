@@ -82,6 +82,6 @@
 @layer components {
 	/* overwrite runeswebkit.css using !important */
 	.dark_bg_theme {
-		@apply dark:bg-stone-900;
+		@apply dark:bg-stone-950;
 	}
 }
