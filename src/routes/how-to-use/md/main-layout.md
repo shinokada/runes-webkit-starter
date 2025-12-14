@@ -6,7 +6,7 @@
   import { newSidebarList } from './utils/helper';
   import { Footer, OnThisPage, extract, removeHyphensAndCapitalize, DotsHorizontalOutline, GithubSolid, random_tailwind_color, XSolid, } from 'runes-webkit';
   import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode, Dropdown,  DropdownUl, DropdownLi, Sidebar, SidebarGroup, SidebarDropdownWrapper, SidebarItem, CloseButton, SidebarBrand } from 'flowbite-svelte';
-  import { RunesMetaTags } from 'runes-meta-tags';
+  import { MetaTags } from 'runes-meta-tags';
   import { Runatics } from 'runatics';
   import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
   
@@ -87,7 +87,7 @@
 {/snippet}
 
 <Runatics {analyticsId} />
-<RunesMetaTags {...metaTags} />
+<MetaTags {...metaTags} />
 
 <header class={headerCls}>
   <Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="lg" fluid div2Class={divClass}>

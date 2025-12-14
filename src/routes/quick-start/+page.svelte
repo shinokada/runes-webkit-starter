@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { HighlightCompo, Code, H1, H2 } from 'runes-webkit';
+	import { Code, H1, H2 } from 'runes-webkit';
+	import { HighlightCompo } from 'svelte-rune-highlight';
 	import { List, Li, Checkbox } from 'flowbite-svelte';
 	const modules = import.meta.glob('./md/*.md', {
 		query: '?raw',
@@ -12,7 +13,7 @@
 
 <H2>Installation</H2>
 
-<HighlightCompo codeLang="ts" code={modules['./md/installation.md'] as string} />
+<HighlightCompo lang="ts" code={modules['./md/installation.md'] as string} />
 
 <H2>Update the followings:</H2>
 
@@ -40,7 +41,7 @@
 	<Li><Checkbox inline />.env.development to .env</Li>
 	<Li><Checkbox inline />README file</Li>
 	<Li
-		><Checkbox inline />Remove unnecessary directories, awesome-samples, flowbite-samples, guide2,
+		><Checkbox inline />Remove unnecessary directories, awesome-samples, flowbite-samples,
 		how-to-use, quick-start, supertiny-samples.</Li
 	>
 	<Li><Checkbox inline />const lis, const urlsToIncludeSwitcherAndSidebar in +layout.svelte</Li>

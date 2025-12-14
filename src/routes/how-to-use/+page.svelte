@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { HighlightCompo, Code, H1, H2 } from 'runes-webkit';
-	// import MainLayout from '../+layout.svelte?raw'
+	import { Code, H1, H2 } from 'runes-webkit';
+	import { HighlightCompo } from 'svelte-rune-highlight';
 	import { List, Li, A, Tabs, TabItem } from 'flowbite-svelte';
 	const modules = import.meta.glob('./md/*.md', {
 		query: '?raw',
@@ -114,7 +114,7 @@
 
 <H2>Installation</H2>
 
-<HighlightCompo codeLang="md" code={modules['./md/installation.md'] as string} />
+<HighlightCompo lang="md" code={modules['./md/installation.md'] as string} />
 
 <H2>Setting</H2>
 
@@ -133,14 +133,14 @@
 			update <Code>keywords</Code>, <Code>contributors</Code> that is the original author, and all URLs:
 		</p>
 		<HighlightCompo
-			codeLang="md"
+			lang="md"
 			code={modules['./md/package-json.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
 	</TabItem>
 	<TabItem title="vite.config.ts">
 		<HighlightCompo
-			codeLang="md"
+			lang="md"
 			code={modules['./md/vite-config.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
@@ -154,7 +154,7 @@
 		</p>
 
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/tailwind-config.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
@@ -172,7 +172,7 @@
 	<TabItem open title="+layout.svelte">
 		<p>Add the following to the <Code>+layout.svelte</Code>:</p>
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/main-layout.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
@@ -180,7 +180,7 @@
 	<TabItem title="Dynamic Code Block Style">
 		<p>Add the following to the <Code>utils/DynamicCodeBlockStyle.svelte</Code>:</p>
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/utils-dynamic-code-block-style.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
@@ -211,26 +211,26 @@
 
 <p>Add the following to the <Code>guide/+layout.svelte</Code>:</p>
 
-<HighlightCompo codeLang="ts" code={modules['./md/guide-layout.md'] as string} />
+<HighlightCompo lang="ts" code={modules['./md/guide-layout.md'] as string} />
 
 <H2>Home Page</H2>
 
 <p>Home page has <Code>SupportBanner, HomeCards, TechInfo</Code> components.</p>
 
-<HighlightCompo codeLang="ts" code={modules['./md/home.md'] as string} />
+<HighlightCompo lang="ts" code={modules['./md/home.md'] as string} />
 
 <H2>Icon Page</H2>
 <p>Icon page uses IconPage component with threeTabs and titel props.</p>
 
 <Tabs>
 	<TabItem open title="no-tabs">
-		<HighlightCompo codeLang="ts" code={modules['./md/no-tabs.md'] as string} />
+		<HighlightCompo lang="ts" code={modules['./md/no-tabs.md'] as string} />
 	</TabItem>
 	<TabItem title="three-tabs">
-		<HighlightCompo codeLang="ts" code={modules['./md/three-tabs.md'] as string} />
+		<HighlightCompo lang="ts" code={modules['./md/three-tabs.md'] as string} />
 	</TabItem>
 	<TabItem title="three-tabs-sizeby-tailwind">
-		<HighlightCompo codeLang="ts" code={modules['./md/three-tabs-sizeby-tailwind.md'] as string} />
+		<HighlightCompo lang="ts" code={modules['./md/three-tabs-sizeby-tailwind.md'] as string} />
 	</TabItem>
 </Tabs>
 
@@ -245,28 +245,28 @@
 <Tabs>
 	<TabItem open title="+layout.server.ts">
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/layout-server.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
 	</TabItem>
 	<TabItem title="tests/home.test.ts">
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/home-test.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
 	</TabItem>
 	<TabItem title="+page.ts">
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/page-ts.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>
 	</TabItem>
 	<TabItem title="tests/page.test.ts">
 		<HighlightCompo
-			codeLang="ts"
+			lang="ts"
 			code={modules['./md/page-test.md'] as string}
 			contentClass="overflow-y-scroll"
 		/>

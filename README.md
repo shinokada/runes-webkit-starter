@@ -11,7 +11,6 @@ A collection of reusable Svelte components for building user interfaces for Svel
 - SupportBanner
 - TechInfo
 
-
 ## Requirements
 
 - Svelte 5 (Runes)

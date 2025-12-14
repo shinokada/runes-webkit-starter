@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import { cn } from './helpers';
-	import type { BaseProps, Props } from './types';
+	import type { OutlineBaseProps, OutlineProps } from './types';
 
-	const ctx: BaseProps = getContext('iconCtx') ?? {};
+	const ctx: OutlineBaseProps = getContext('iconCtx') ?? {};
 	const sizes = {
 		xs: 'w-3 h-3',
 		sm: 'w-4 h-4',
@@ -16,11 +16,12 @@
 		size = ctx.size || 'md',
 		color = ctx.color || 'currentColor',
 		title,
+		strokeWidth = ctx.strokeWidth || 2,
 		desc,
 		class: className,
 		ariaLabel,
 		...restProps
-	}: Props = $props();
+	}: OutlineProps = $props();
 
 	const ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
 	const hasDescription = $derived(!!(title?.id || desc?.id));
@@ -29,7 +30,8 @@
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	fill={color}
+	fill="none"
+	{color}
 	{...restProps}
 	class={cn('shrink-0', sizes[size], className)}
 	viewBox="0 0 24 24"
@@ -44,7 +46,11 @@
 		<desc id={desc.id}>{desc.desc}</desc>
 	{/if}
 	<path
-		d="M5 13.17a3.001 3.001 0 0 0 0 5.66V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 0 0-2 0v9.17ZM11 20v-9.17a3.001 3.001 0 0 1 0-5.66V4a1 1 0 1 1 2 0v1.17a3.001 3.001 0 0 1 0 5.66V20a1 1 0 1 1-2 0Zm6-1.17V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 1 0-2 0v9.17a3.001 3.001 0 0 0 0 5.66Z"
+		stroke="currentColor"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke-width={strokeWidth}
+		d="M18 6h-8m8 4H6m12 4h-8m8 4H6"
 	/>
 </svg>
 
@@ -55,6 +61,7 @@
 @prop size = ctx.size || 'md'
 @prop color = ctx.color || 'currentColor'
 @prop title
+@prop strokeWidth = ctx.strokeWidth || 2
 @prop desc
 @prop class: className
 @prop ariaLabel
